@@ -6,11 +6,9 @@ Crie um programa em Java que leia duas Strings do console e exiba no console as 
 presentem em ambas as Strings ordenadas em ordem alfabetica.*/
 public class Ex6 {
     public static void main(String[] args) {
-        //Scanner scanner = new Scanner(System.in);
-        //String str1 = scanner.nextLine();
-        //String str2 = scanner.nextLine();
-
-        //System.out.println("StrLetras: " + letrasIguais(str1, str2));
+        Scanner scanner = new Scanner(System.in);
+        String str1 = scanner.nextLine();
+        String str2 = scanner.nextLine();
         System.out.println("StrLetras: " + letrasIguais("alexandre", "andrei"));
     }
 
