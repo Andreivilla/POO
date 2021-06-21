@@ -34,7 +34,7 @@ public class Produto {
     public void setIdProduto(int idProduto) {
         this.idProduto = idProduto;
     }
-
+    @Override
     public String toString(){
         return "ID produto: " + this.getIdProduto() + "\nNome: " + this.getNome() + "Preco: " + this.getPreco();
     }

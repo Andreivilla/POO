@@ -58,7 +58,7 @@ public class Funcionario extends Pessoa{
         return "Nome: " + this.getNome() + "\nCPF: " + this.getCpf() + "ID do funcionario: " + this.getIdFuncionario() + "Salario: " + this.getSalario() + "Horas de trabalho: " + this.getHorasTrabalho();
     }
 
-    //@Override
+
     public Boolean equals(Funcionario verif){
         if(verif != null) {
             return false;

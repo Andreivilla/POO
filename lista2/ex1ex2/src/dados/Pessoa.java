@@ -36,7 +36,7 @@ public class Pessoa {
     public String toString(){
         return "Nome: " + this.getNome() + "\nCPF: " + this.getCpf();
     }
-    //@Override
+
     public Boolean equals(Pessoa verif){
         if(verif != null) {
             return false;
