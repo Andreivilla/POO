@@ -20,16 +20,6 @@ public class Matriz<T>{
         }
     }
 
-    public T maiorElemento(){
-        List<T> listaQadrantes = new ArrayList<>();
-        listaQadrantes.add(Collections.max(getElementosQuadrante(Quadrante.PRIMEIRO)));
-        listaQadrantes.add(Collections.max(getElementosQuadrante(Quadrante.SEGUNDO)));
-        listaQadrantes.add(Collections.max(getElementosQuadrante(Quadrante.TERCEIRO)));
-        listaQadrantes.add(Collections.max(getElementosQuadrante(Quadrante.QUARTO)));
-
-        return Collections.max(listaQadrantes);
-    }
-
 
     //setter
     public boolean set(T objeto, int i, int j){

@@ -1,5 +1,9 @@
 package apresentacao;
 import dados.Matriz;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -14,11 +18,13 @@ public class Main {
                     mat.set(Integer.parseInt(scanner.nextLine()), i, j);
                 }
             }
-            System.out.println("Matriz:\n" + mat);
-            System.out.println("Quadrant1" + mat.getElementosQuadrante(Matriz.Quadrante.PRIMEIRO));
-            System.out.println("Quadrant2" + mat.getElementosQuadrante(Matriz.Quadrante.SEGUNDO));
-            System.out.println("Quadrant3" + mat.getElementosQuadrante(Matriz.Quadrante.TERCEIRO));
-            System.out.println("Quadrant4" + mat.getElementosQuadrante(Matriz.Quadrante.QUARTO));
+            List<Integer> menor = new ArrayList<>();
+            menor.add(Collections.min(mat.getElementosQuadrante(Matriz.Quadrante.PRIMEIRO)));
+            menor.add(Collections.min(mat.getElementosQuadrante(Matriz.Quadrante.SEGUNDO)));
+            menor.add(Collections.min(mat.getElementosQuadrante(Matriz.Quadrante.TERCEIRO)));
+            menor.add(Collections.min(mat.getElementosQuadrante(Matriz.Quadrante.QUARTO)));
+            System.out.println("Matriz: \n" + mat);
+            System.out.println("Menor: " + Collections.min(menor));
             System.out.print("Digite qualquer valor para continuar(-1 para para): ");
             op = Integer.parseInt(scanner.nextLine());
         }
