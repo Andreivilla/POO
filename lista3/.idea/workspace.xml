@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d0b380c3-3e9f-4706-85e7-ca839c7e041a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Trabalho/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Trabalho/src/Dados/Avaliacao.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../dicionario/map_dicionario.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../praticas/pratica6/pratica6.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../praticas/pratica6/src/apresentacao/Abundantes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../praticas/pratica6/src/apresentacao/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../praticas/pratica6/src/dados/Fatoriais.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../praticas/pratica6/src/dados/Fibonacci.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../praticas/pratica6/src/dados/Gerador.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../praticas/pratica6/src/dados/Naturais.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../praticas/pratica6/src/dados/Perfeitos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../praticas/pratica6/src/dados/Primos.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../praticas/pratica6/src/dados/Quadrados.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/src/Apresentacao/Principal.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Trabalho/src/Apresentacao/Principal.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/src/Dados/Aluno.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Trabalho/src/Dados/Aluno.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/src/Dados/Avalicao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/src/Dados/Diciplina.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Trabalho/src/Dados/Diciplina.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/src/Dados/Semestre.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Trabalho/src/Dados/Semestre.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/src/Negocio/Sistema.java" beforeDir="false" afterPath="$PROJECT_DIR$/../Trabalho/src/Negocio/Sistema.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1udRWuTVuY7Ts93dHzv9glTkamK" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d0b380c3-3e9f-4706-85e7-ca839c7e041a" name="Default Changelist" comment="" />
+      <created>1624993514939</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1624993514939</updated>
+      <workItem from="1624993516356" duration="167000" />
+      <workItem from="1624994032417" duration="608000" />
+      <workItem from="1625018936151" duration="613000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="120" y="98" key="#Project_Structure" timestamp="1624993581334">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="120" y="98" key="#Project_Structure/0.0.2560.1040@0.0.2560.1040" timestamp="1624993581334" />
+    <state x="320" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1624993593508">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="320" y="259" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.2560.1040@0.0.2560.1040" timestamp="1624993593508" />
+    <state x="426" y="261" key="FileChooserDialogImpl" timestamp="1625019551807">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="426" y="261" key="FileChooserDialogImpl/0.0.2560.1040@0.0.2560.1040" timestamp="1625019551807" />
+    <state x="29" y="140" key="new project wizard" timestamp="1625019553196">
+      <screen x="0" y="0" width="2560" height="1040" />
+    </state>
+    <state x="29" y="140" key="new project wizard/0.0.2560.1040@0.0.2560.1040" timestamp="1625019553196" />
+  </component>
+</project>
