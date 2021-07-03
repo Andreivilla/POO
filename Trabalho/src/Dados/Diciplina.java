@@ -23,14 +23,17 @@ public class Diciplina {
         }
         return 0;
     }
-
-
+    public void removeAvaliacao(int chave){
+        avaliacoes.remove(chave);
+    }
     public void cadastrarAvaliacao(Avaliacao add){
         this.avaliacoes.put(add.getIdAvaliacao(), add);
-
     }
 
     //getters
+    public int getAvaliacoesSize(){
+        return avaliacoes.size();
+    }
     public String getNome() {
         return nome;
     }

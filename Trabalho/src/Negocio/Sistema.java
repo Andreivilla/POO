@@ -1,6 +1,7 @@
 package Negocio;
 
 import Dados.Aluno;
+import Dados.Avaliacao;
 import Dados.Diciplina;
 import Dados.Semestre;
 
@@ -10,13 +11,45 @@ import java.util.Map;
 
 public class Sistema {
     private Map<Long, Aluno> alunos = new HashMap<>();
-    private Aluno alunoLogado;
-    private long alunoKey;
+    private Aluno alunoLogado=null;
+    private long alunoKey=-1;
     private Semestre semestreaux;
-    private int semestrekey;
-    private Diciplina diciplinaAux;
-    private int dicipliankey;
+    private int semestrekey=-1;
+    private Diciplina diciplinaAux=null;
+    private int dicipliankey=-1;
 
+
+    //Remover
+    public void removeSemestre(int chave){
+        this.alunoLogado.removerSemestre(chave);
+    }
+    public void removeDiciplina(int chave){
+        semestreaux.removeDiciplina(chave);
+    }
+    public void removeAvaliacao(int chave){
+        diciplinaAux.removeAvaliacao(chave);
+    }
+
+    //cadastrar
+    public void cadastrarAluno(Aluno cadastra){
+        this.alunos.put(cadastra.getCpf(), cadastra);
+    }
+    public void cadastrarSemestre(Semestre add){
+        add.setIdSemestre(this.alunoLogado.getSemestresSize()+1);
+        this.alunoLogado.cadastrarSemestre(add);
+        atualizarAluno();
+    }
+    public void cadastrarDiciplina(Diciplina add){
+        add.setIdDiciplina(semestreaux.getDiciplinasSize()+1);
+        semestreaux.getDiciplinas().put(add.getIdDiciplina(), add);
+    }
+    public void cadastraAvaliacao(Avaliacao add){
+        add.setIdAvaliacao(diciplinaAux.getAvaliacoesSize());
+        diciplinaAux.cadastrarAvaliacao(add);
+    }
+    public static void cadastrarNotas(){
+
+    }
 
     //login
     public boolean login(long cpf, String senha){
@@ -31,63 +64,36 @@ public class Sistema {
         return false;
     }
 
-    //cadastro
-    public void cadastrarAluno(Aluno cadastra){
-        this.alunos.put(cadastra.getCpf(), cadastra);
-    }
-    public static void cadastrarDiciplina(){
 
-    }
-    public static void cadastrarNotas(){
 
-    }
-
-    //SEMESTRE
-    //cadastrar
-    public void cadastrarSemestre(Semestre add){
-        add.setIdSemestre(this.alunoLogado.getSemestresSize()+1);
-        this.alunoLogado.cadastrarSemestre(add);
-        atualizarAluno(this.alunoKey, this.alunoLogado);
-    }
-
-    public void removeSemestre(int chave){
-        this.alunoLogado.removerSemestre(chave);
-    }
+    //Acessar
     public void acessarSemestre(int chave){
         this.semestreaux = alunoLogado.getSemestres().get(chave);
         this.semestrekey = chave;
     }
-
-    //DICIPLINA
-    //cadastrar
-    public void cadastrarDiciplina(Diciplina add){
-        add.setIdDiciplina(semestreaux.getDiciplinasSize()+1);
-        semestreaux.getDiciplinas().put(add.getIdDiciplina(), add);
+    public void acessarDiciplina(int chave){
+        this.semestreaux.getDiciplinas().get(chave);
+        this.dicipliankey = chave;
     }
-    public static void removeDiciplina(){
-
+    public void acessarAvaliacao(int chave){
+        this.diciplinaAux.getAvaliacoes().get(chave);
+        this.semestrekey = chave;
     }
 
-
-    //printar
-    public static void exibeDiciplinas(){
-
+    //ATUALIZAR DADOS
+    public void atualizarAluno(){
+        this.alunos.replace(alunoKey,alunoLogado);
     }
-    public static void exibeNotas(){
-
+    public void atualizarSemestre(){
+        this.alunoLogado.getSemestres().replace(semestrekey, semestreaux);
+        atualizarAluno();
     }
-    public static void exibeSemestres(){
-
+    public void atualizaDiciplina(){
+        this.semestreaux.getDiciplinas().replace(dicipliankey, diciplinaAux);
+        atualizarSemestre();
+        atualizarAluno();
     }
-    public static void exibeAvalicao(){
-
-    }
-    public String exibeAluno(){
-        return this.alunoLogado.toString();
-    }
-
     //getters
-
     public Diciplina getDiciplinaAux() {
         return diciplinaAux;
     }
@@ -114,7 +120,6 @@ public class Sistema {
     }
 
     //setters
-
     public void setAlunoKey(long alunoKey) {
         this.alunoKey = alunoKey;
     }
@@ -139,10 +144,4 @@ public class Sistema {
     public void setSemestrekey(int semestrekey) {
         this.semestrekey = semestrekey;
     }
-
-    //ATUALIZAR DADOS
-    public void atualizarAluno(Long chave, Aluno aluno){
-        this.alunos.replace(chave, aluno);
-    }
-    //public void atualizarSemestre()
 }

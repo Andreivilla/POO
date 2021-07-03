@@ -210,7 +210,14 @@ public class Principal {
         }
     }
     public static void exibeAvalicao(){
-
+        if(!(sistema.getDiciplinaAux().getAvaliacoesSize() == 0)){
+            System.out.println("Semestres cadastrados: ");
+            for (Avaliacao printa : sistema.getDiciplinaAux().getAvaliacoes().values()) {
+                System.out.println(printa);
+            }
+        }else{
+            System.out.println("Não possui Avaliacoes cadastrados");
+        }
     }
 
 }

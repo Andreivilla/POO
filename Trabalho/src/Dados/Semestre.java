@@ -8,12 +8,15 @@ public class Semestre {
     private String nome;
     private Map<Integer, Diciplina> diciplinas = new HashMap<>();
 
-    public void cadastrarDiciplina(Diciplina add){
+    public void cadastrarDiciplina(Diciplina add, int i){
         diciplinas.put(add.getIdDiciplina(), add);
     }
 
     public int getDiciplinasSize(){
         return  this.diciplinas.size();
+    }
+    public void removeDiciplina(int chave){
+        diciplinas.remove(chave);
     }
 
     @Override
