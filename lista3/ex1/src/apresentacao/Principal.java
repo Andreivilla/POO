@@ -1,5 +1,6 @@
 package apresentacao;
 
+import dados.LerArquivo;
 import dados.Pessoa;
 
 import java.util.*;
@@ -9,22 +10,21 @@ public class Principal {
     private static List<Pessoa> pessoas = new ArrayList<>();
 
     public static void main(String[] args) {
-        /*Pessoa teste = new Pessoa(4, "475.458.343-21", 17, "Joao Pedro Oliveira", "Florianopolis");
-        pessoas.add(teste);
-        teste = new Pessoa(1, "272.938.273-93", 5, "Lucas da Silva", "Joinville");
-        pessoas.add(teste);
-        teste = new Pessoa(2, "472.938.253-43", 5, "Igor Pereira", "Jaragua do Sul");
-        pessoas.add(teste);
-        teste = new Pessoa(3, "343.945.234-04", 14, "Luiz Otavio Ramos", "Joinville");
-        pessoas.add(teste);*/
-
-        /*exibePessoas();
+        //o neunciado da questão pedia a implementação de um loop terminado em -1
+        // //porem a dica indicava a opção de fzr com arquivos então implemtei ambos
+        //o primeiro bloco pega nPessoas do arquivo pessoas.txt
+        LerArquivo lerArquivo = new LerArquivo();
+        pessoas = lerArquivo.getPesssoasArquivo(4);
+        exibePessoas();
         Collections.sort(pessoas, new comparatorByNome());
         System.out.println("\n\nDps de comparar por nome: \n");
-        exibePessoas();*/
-
+        exibePessoas();
+        pessoas.clear();
+        //depois de limpar a List pessoas damos inicio ao loop mencionado no enunciado
+        //os codigos funcionam independentemente podem ser comentados para facilitar a execução
         int op = 0;
         while(op != -1){
+            System.out.println("Adicionar pessoas");
             adicionarPessoa();
             System.out.println("Digite -1 para parar");
             exibePessoas();
