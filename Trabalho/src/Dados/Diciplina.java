@@ -9,11 +9,17 @@ public class Diciplina {
 
 
     public double mediaFinal(){
-        double somaNotas = 0;
-        for(Avaliacao avaliacao : this.avaliacoes.values()){
-            somaNotas += avaliacao.getNota();
+        if(avaliacoes.size() !=0) {
+            double somaNotas = 0;
+            double somapeso = 0;
+            for (Avaliacao avaliacao : this.avaliacoes.values()) {
+                somaNotas += avaliacao.getNota() * avaliacao.getPeso();
+                somapeso += avaliacao.getPeso();
+            }
+            return somaNotas / somapeso;
+        }else{
+            return 0;
         }
-        return somaNotas / this.avaliacoes.size();
     }
 
     public double mediaExame(){
@@ -36,9 +42,10 @@ public class Diciplina {
         str.append(idDiciplina);
         str.append(" Nome: ");
         str.append(nome);
-        for(Avaliacao avaliacao : avaliacoes.values()){
-            str.append(avaliacao);
-        }
+        str.append("\tMedia: ");
+        str.append(mediaFinal());
+        str.append("\tMedia exame: ");
+        str.append(mediaExame());
         return str.toString();
     }
 
