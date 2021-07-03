@@ -30,6 +30,18 @@ public class Diciplina {
         this.avaliacoes.put(add.getIdAvaliacao(), add);
     }
 
+    public String toString(){
+        StringBuilder str = new StringBuilder();
+        str.append("ID: ");
+        str.append(idDiciplina);
+        str.append(" Nome: ");
+        str.append(nome);
+        for(Avaliacao avaliacao : avaliacoes.values()){
+            str.append(avaliacao);
+        }
+        return str.toString();
+    }
+
     //getters
     public int getAvaliacoesSize(){
         return avaliacoes.size();

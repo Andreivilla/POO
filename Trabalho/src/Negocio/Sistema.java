@@ -47,9 +47,7 @@ public class Sistema {
         add.setIdAvaliacao(diciplinaAux.getAvaliacoesSize());
         diciplinaAux.cadastrarAvaliacao(add);
     }
-    public static void cadastrarNotas(){
 
-    }
 
     //login
     public boolean login(long cpf, String senha){
@@ -72,12 +70,8 @@ public class Sistema {
         this.semestrekey = chave;
     }
     public void acessarDiciplina(int chave){
-        this.semestreaux.getDiciplinas().get(chave);
+        this.diciplinaAux = this.semestreaux.getDiciplinas().get(chave);
         this.dicipliankey = chave;
-    }
-    public void acessarAvaliacao(int chave){
-        this.diciplinaAux.getAvaliacoes().get(chave);
-        this.semestrekey = chave;
     }
 
     //ATUALIZAR DADOS

@@ -7,6 +7,11 @@ public class Avaliacao {
     private double peso;
     private String data;
 
+    public String toString(){
+        return nome + " " + nota + " " + peso + " " +  data;
+    }
+
+
     //getters
     public String getNome() {
         return nome;
@@ -25,7 +30,6 @@ public class Avaliacao {
     }
 
     //setters
-
     public void setNome(String nome) {
         this.nome = nome;
     }
