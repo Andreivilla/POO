@@ -1,4 +1,4 @@
-package Dados;
+package dados;
 
 public class Avaliacao {
     private int idAvaliacao;

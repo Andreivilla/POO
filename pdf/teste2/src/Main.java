@@ -8,10 +8,9 @@ import com.itextpdf.layout.element.Table;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("afafawefaef");
         try{
             //Creating a pdf Dcoment object
-            String dest = "addingTable.pdf";
+            String dest = "arquivo\\addingTable.pdf";
             PdfWriter writer = new PdfWriter(dest);
 
             //creatting pdfDocument object

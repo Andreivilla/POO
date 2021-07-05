@@ -1,9 +1,6 @@
-package Negocio;
+package negocio;
 
-import Dados.Aluno;
-import Dados.Avaliacao;
-import Dados.Diciplina;
-import Dados.Semestre;
+import dados.*;
 
 
 import java.util.HashMap;
@@ -87,6 +84,12 @@ public class Sistema {
         atualizarSemestre();
         atualizarAluno();
     }
+
+    public void extratoAluno(){
+        GeradorPdf gerador = new GeradorPdf();
+        gerador.gerarTabela(alunoLogado);
+    }
+
     //getters
     public Diciplina getDiciplinaAux() {
         return diciplinaAux;

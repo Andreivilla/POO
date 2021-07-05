@@ -1,10 +1,8 @@
-package Apresentacao;
+package apresentacao;
 
-import Dados.*;
-import Negocio.Sistema;
+import dados.*;
+import negocio.Sistema;
 
-import java.security.PublicKey;
-import java.util.Map;
 import java.util.Scanner;
 
 public class Principal {
@@ -77,6 +75,7 @@ public class Principal {
         System.out.println("1 - Cadastrar semestre");
         System.out.println("2 - Remover Semestre");
         System.out.println("3 - Acessar menu de semestre");
+        System.out.println("4 - Gerar extrato de diciplinas");
         System.out.println("0 - Fechar programa");
         System.out.println("|--------------------------|");
     }
@@ -96,6 +95,9 @@ public class Principal {
                 case 3:
                     acessarSemestre();
                     menuSemestre();
+                    break;
+                case 4:
+                    sistema.extratoAluno();
                     break;
                 case 0:
                     sistema.atualizarAluno();
@@ -125,7 +127,6 @@ public class Principal {
         System.out.print("Digite o ID do semestre: ");
         sistema.acessarSemestre(Integer.parseInt(scanner.nextLine()));
     }
-
     //semestre
     public static void printMenuSemestres(){
         System.out.println("|--------------------------|");
