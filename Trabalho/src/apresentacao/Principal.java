@@ -6,16 +6,14 @@ import negocio.Sistema;
 import java.util.Scanner;
 
 public class Principal {
-
     private static Scanner scanner = new Scanner(System.in);
     private static Sistema sistema = new Sistema();
 
-
-
-
     public static void main(String[] args) {
-        if (login()){
-            menuPrincipal();
+        while(true) {
+            if (login()){
+                menuPrincipal();
+            }
         }
     }
 
@@ -76,7 +74,7 @@ public class Principal {
         System.out.println("2 - Remover Semestre");
         System.out.println("3 - Acessar menu de semestre");
         System.out.println("4 - Gerar extrato de diciplinas");
-        System.out.println("0 - Fechar programa");
+        System.out.println("0 - Logout");
         System.out.println("|--------------------------|");
     }
     public static void menuPrincipal(){

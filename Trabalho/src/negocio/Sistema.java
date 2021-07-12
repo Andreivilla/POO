@@ -44,8 +44,6 @@ public class Sistema {
         add.setIdAvaliacao(diciplinaAux.getAvaliacoesSize());
         diciplinaAux.cadastrarAvaliacao(add);
     }
-
-
     //login
     public boolean login(long cpf, String senha){
         if(this.alunos.containsKey(cpf)){
@@ -58,9 +56,6 @@ public class Sistema {
         }
         return false;
     }
-
-
-
     //Acessar
     public void acessarSemestre(int chave){
         this.semestreaux = alunoLogado.getSemestres().get(chave);

@@ -11,7 +11,6 @@ public class Avaliacao {
         return nome + " " + nota + " " + peso + " " +  data;
     }
 
-
     //getters
     public String getNome() {
         return nome;

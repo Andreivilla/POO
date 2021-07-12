@@ -8,7 +8,7 @@ public class Semestre {
     private String nome;
     private Map<Integer, Diciplina> diciplinas = new HashMap<>();
 
-    public void cadastrarDiciplina(Diciplina add, int i){
+    public void cadastrarDiciplina(Diciplina add){
         diciplinas.put(add.getIdDiciplina(), add);
     }
 

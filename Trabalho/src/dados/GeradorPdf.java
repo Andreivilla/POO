@@ -13,21 +13,20 @@ import com.itextpdf.layout.element.Table;
 public class GeradorPdf {
     public void gerarTabela(Aluno aluno){
         try{
-            //Creating a pdf Dcoment object
             String dest = "src\\arquivos\\extratoDeNotas.pdf";
             PdfWriter writer = new PdfWriter(dest);
 
-            //creatting pdfDocument object
+            //creando objeto do documento de pdf
             PdfDocument pdf = new PdfDocument(writer);
 
-            //creating a document objext
+            //creando objeto do documento de texto
             Document doc = new Document(pdf);
 
-            //creating a table
+            //creando tabela
             float[] pointColummWidths = {150F, 150F, 150F, 150F};
             Table table = new Table(pointColummWidths);
 
-            //adding cells to the table
+            //adicionando celulas a tabel
             table.addCell(new Cell().add((new Paragraph("Semestre"))));
             table.addCell(new Cell().add((new Paragraph("Diciplina"))));
             table.addCell(new Cell().add((new Paragraph("Media"))));
@@ -42,11 +41,12 @@ public class GeradorPdf {
                     table.addCell(new Cell().add((new Paragraph(diciplina.mediaExame()+""))));
                 }
             }
+            //gerando e adicionando cabeçalho a tabela
             doc.add(new Paragraph("Nome: " + aluno.getNome() + "\nCpf: " + aluno.getCpf() + "\n"));
-            //adding Table to document
+            //adicionando a tabela ao documento
             doc.add(table);
 
-            //closing document
+            //fechando documento
             doc.close();
             System.out.println("Tabela Criada");
         }catch(FileNotFoundException e){
