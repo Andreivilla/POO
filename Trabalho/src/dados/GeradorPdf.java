@@ -16,13 +16,13 @@ public class GeradorPdf {
             String dest = "src\\arquivos\\extratoDeNotas.pdf";
             PdfWriter writer = new PdfWriter(dest);
 
-            //creando objeto do documento de pdf
+            //criando objeto do documento de pdf
             PdfDocument pdf = new PdfDocument(writer);
 
-            //creando objeto do documento de texto
+            //criando objeto do documento de texto
             Document doc = new Document(pdf);
 
-            //creando tabela
+            //criando tabela
             float[] pointColummWidths = {150F, 150F, 150F, 150F};
             Table table = new Table(pointColummWidths);
 
