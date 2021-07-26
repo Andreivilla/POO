@@ -5,4 +5,12 @@ public abstract class Animal {
     public String emitirSom(){
         return "";
     }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getNome() {
+        return nome;
+    }
 }

@@ -1,16 +1,8 @@
 package dados;
 
 public class Cachorro extends Animal{
-    String nome;
-
+    @Override
     public String emitirSom(){
-        return "AU AU";
-    }
-
-    public String getNome() {
-        return nome;
-    }
-    public void setNome(String nome) {
-        this.nome = nome;
+        return "Au Au";
     }
 }
