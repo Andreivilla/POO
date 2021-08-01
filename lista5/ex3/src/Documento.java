@@ -2,7 +2,7 @@ public class Documento extends Arquivo{
     String texto;
 
     public Documento(String nome) {
-        super(nome+"txt");
+        super(nome+".txt");
     }
 
     public String getTexto() {
@@ -15,6 +15,6 @@ public class Documento extends Arquivo{
 
     @Override
     public String toString() {
-        return this.getNome();
+        return "\t" + this.getNome();
     }
 }

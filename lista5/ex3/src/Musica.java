@@ -13,6 +13,6 @@ public class Musica extends Arquivo{
 
     @Override
     public String toString() {
-        return this.getNome() + "\nDuracao: " + getDuracao();
+        return "\t" + this.getNome() + "\n\tDuracao: " + getDuracao();
     }
 }

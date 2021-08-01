@@ -12,6 +12,7 @@ public class SistemaArquivo {
     }
     public void criarVideo(String nome, String diretorio, Integer qualidade){
         Video aux = new Video(nome);
+        aux.setQualidade(qualidade);
         diretorios.get(diretorio).add(aux);
     }
     public void criarMusica(String nome, String diretorio, int duracao){
@@ -28,8 +29,7 @@ public class SistemaArquivo {
     public String toString() {
         String str = "";
         for(String diretorio : diretorios.keySet()){
-            str += diretorio;
-            str += "\n";
+            str += "\n" + diretorio;
             for(Arquivo arquivo: diretorios.get(diretorio)){
                 str += "\n" + arquivo.toString();
             }

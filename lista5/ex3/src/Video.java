@@ -13,6 +13,6 @@ public class Video extends Arquivo{
 
     @Override
     public String toString() {
-        return this.getNome() + "\nDuracao: "+ this.getQualidade();
+        return "\t" + this.getNome() + "\n\tQualidade: "+ this.getQualidade()+"p";
     }
 }
