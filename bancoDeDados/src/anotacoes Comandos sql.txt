@@ -1,0 +1,21 @@
+create database testando
+create table tabela(inteiro int, nome character varying(20), flutuante float)
+insert into tabela(inteiro, nome, flutuante) values(1, 'meu nome', 1.89) /*reparar nas '' aspas simples ao inserir na tabela*/
+
+
+
+criando tabela do exercicio feito em sala
+create table cidade (id int, nome varchar(50), estado varchar(50), primary key(id));
+create sequence id_cidade;
+
+create table cliente(id int, cpf int, nome varchar(50), endereco varchar(100), primare key(id));
+create sequence id_cliente;
+
+create table  reserba (id int, data date, hora time, preco float, classeVooo varchar(10), idaEvolta bollean, id_ida int, id_origem int, id_destino int,
+id_cliente int, primary key(id), foreign key (id_ida) references reserva, foreign key (id_eorigem) references cidade, foreign key (id_destino) references cidade, foreign key (id_cliente) references cliente);
+create sequence id_reserva;
+
+insert into cidade(select nextval('id_cidade'),'Joinville','SC');
+insert into cidade(select nextval('id_cidade'),'Florianopolis','SC');
+insert into cidade(select nextval('id_cidade'),'Curitiba','PR');
+
