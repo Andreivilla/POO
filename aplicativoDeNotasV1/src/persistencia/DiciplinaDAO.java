@@ -15,35 +15,33 @@ public class DiciplinaDAO {
     private PreparedStatement delete;
     private PreparedStatement update;
 
-    private DiciplinaDAODAO() throws  ClassNotFoundException, SQLException, SelectException {
+    private DiciplinaDAO() throws  ClassNotFoundException, SQLException, SelectException {
         Connection conexao = Conexao.getConexao();
-        selectNewId = conexao.prepareStatement("select nextval('seq_aluno')");
-        insert = conexao.prepareStatement("insert into alunos values (?,?,?)");
+        selectNewId = conexao.prepareStatement("select nextval('seq_semestre')");
+        insert = conexao.prepareStatement("insert into alunos values (?,?)");
         select = conexao.prepareStatement("select * from alunos where cpf = ?");
         update = conexao.prepareStatement("update alunos set cpf = ?, nome = ?, senha = ?");
         delete = conexao.prepareStatement("delete from alunos where cpf = ?");
     }
 
-    public void insert(Aluno obj) throws InsertException, SelectException{
+    public void insert(Diciplina obj) throws InsertException, SelectException{
         try{
-            insert.setString(1, obj.getCpf());
+            insert.setString(1, obj.getCodDiciplina());
             insert.setString(2, obj.getNome());
-            insert.setString(3, obj.getSenha());
             insert.executeUpdate();
         }catch (SQLException e){
             e.printStackTrace();
         }
     }
 
-    public Aluno select(int id) throws SelectException{
+    public Diciplina select(String id) throws SelectException{
         try{
-            Aluno obj = new Aluno();
-            select.setInt(1, id);
+            Diciplina obj = new Diciplina();
+            select.setString(1, id);
             ResultSet rs = select.executeQuery();
             if(rs.next()){
-                obj.setCpf(rs.getString(1));
+                obj.setCodDiciplina(rs.getString(1));
                 obj.setNome(rs.getString(2));
-                obj.setSenha(rs.getString(3));
                 return obj;
             }
         }catch(SQLException e){
@@ -73,20 +71,19 @@ public class DiciplinaDAO {
         }
         return 0;
     }
-    private void update(Aluno obj){
+    private void update(Diciplina obj){
         //update Pessoa set idpessoa = ?, nome = ?, idade = ?, where idpessoa = ?
         try {
-            update.setString(2, obj.getCpf());
+            update.setString(2, obj.getCodDiciplina());
             update.setString(2, obj.getNome());
-            update.setString(2, obj.getSenha());
         }catch (SQLException e){
             e.printStackTrace();
         }
     }
 
-    public static AlunoDAO getInstance() throws ClassNotFoundException, SQLException, SelectException{
+    public static DiciplinaDAO getInstance() throws ClassNotFoundException, SQLException, SelectException{
         if(instance == null){
-            instance = new AlunoDAO();
+            instance = new DiciplinaDAO();
         }
         return instance;
     }

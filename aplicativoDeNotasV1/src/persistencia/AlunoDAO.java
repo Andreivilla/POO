@@ -33,10 +33,10 @@ public class AlunoDAO {
         }
     }
 
-    public Aluno select(int id) throws SelectException{
+    public Aluno select(String id) throws SelectException{
         try{
             Aluno obj = new Aluno();
-            select.setInt(1, id);
+            select.setString(1, id);
             ResultSet rs = select.executeQuery();
             if(rs.next()){
                 obj.setCpf(rs.getString(1));

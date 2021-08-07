@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Diciplina {
-    private int idDiciplina;
+    private String codDiciplina;
     private String nome;
     private Map<Integer, Avaliacao> avaliacoes = new HashMap<>();
 
@@ -39,7 +39,7 @@ public class Diciplina {
     public String toString(){
         StringBuilder str = new StringBuilder();
         str.append("ID: ");
-        str.append(idDiciplina);
+        str.append(codDiciplina);
         str.append(" Nome: ");
         str.append(nome);
         str.append("\tMedia: ");
@@ -59,9 +59,11 @@ public class Diciplina {
     public Map<Integer, Avaliacao> getAvaliacoes() {
         return avaliacoes;
     }
-    public int getIdDiciplina() {
-        return idDiciplina;
+
+    public String getCodDiciplina() {
+        return codDiciplina;
     }
+
     //setters
     public void setNome(String nome) {
         this.nome = nome;
@@ -69,7 +71,8 @@ public class Diciplina {
     public void setAvaliacoes(Map<Integer, Avaliacao> avaliacoes) {
         this.avaliacoes = avaliacoes;
     }
-    public void setIdDiciplina(int idDiciplina) {
-        this.idDiciplina = idDiciplina;
+
+    public void setCodDiciplina(String codDiciplina) {
+        this.codDiciplina = codDiciplina;
     }
 }
