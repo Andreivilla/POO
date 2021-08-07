@@ -4,9 +4,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Aluno {
-    private String senha;
+    private String cpf;
     private String nome;
-    private long cpf;
+    private String senha;
+
     private Map<Integer, Semestre> semestres = new HashMap<>();
 
     //SEMESTRE
@@ -24,7 +25,7 @@ public class Aluno {
     public String getNome() {
         return nome;
     }
-    public long getCpf() {
+    public String getCpf() {
         return cpf;
     }
     public String getSenha() {
@@ -39,7 +40,7 @@ public class Aluno {
     public void setNome(String nome) {
         this.nome = nome;
     }
-    public void setCpf(long cpf) {
+    public void setCpf(String cpf) {
         this.cpf = cpf;
     }
     public void setSenha(String senha) {
