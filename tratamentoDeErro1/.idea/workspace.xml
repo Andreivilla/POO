@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="1698c116-4234-475f-af24-a16d6d259b06" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../Trabalho/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/lib/barcodes-7.1.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/lib/font-asian-7.1.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/lib/forms-7.1.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/lib/hyph-7.1.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/lib/io-7.1.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/lib/kernel-7.1.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/lib/layout-7.1.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/lib/pdfa-7.1.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/lib/pdftest-7.1.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/lib/sign-7.1.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/lib/slf4j-api-1.7.9.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/lib/styled-xml-parser-7.1.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/lib/svg-7.1.14.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/out/production/Trabalho/Apresentacao/Principal.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/out/production/Trabalho/Dados/Aluno.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/out/production/Trabalho/Dados/Avaliacao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/out/production/Trabalho/Dados/Diciplina.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/out/production/Trabalho/Dados/Semestre.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/out/production/Trabalho/Negocio/Sistema.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/out/production/Trabalho/arquivos/extratoDeNotas.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/out/production/Trabalho/dados/GeradorPdf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/src/apresentacao/Principal.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/src/arquivos/extratoDeNotas.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/src/dados/Aluno.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/src/dados/Avaliacao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/src/dados/Diciplina.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/src/dados/GeradorPdf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/src/dados/Semestre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/src/negocio/Sistema.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Trabalho/trabalho.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/postgresql-42.2.23 (2).jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tratamentoDeErro1/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tratamentoDeErro1/dados/Pessoa.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tratamentoDeErro1/exception/DeleteException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tratamentoDeErro1/exception/InsertException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tratamentoDeErro1/exception/SelectException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tratamentoDeErro1/exception/UpdateException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tratamentoDeErro1/persistencia/Conexao.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/tratamentoDeErro1/persistencia/PessoaDAO.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/dados/Pessoa.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exception/DeleteException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exception/InsertException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exception/SelectException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exception/UpdateException.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/persistencia/Conexao.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/persistencia/PessoaDAO.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tratamentoDeErro1.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectId" id="1wKpFgLTjgK2rHCGrAjF7TMbB1G" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/lib/postgresql-42.2.23 (2).jar" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Cliente\Documents\GitHub\POO\tratamentoDeErro1\src\exception" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="tratamentoDeErro1" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="1698c116-4234-475f-af24-a16d6d259b06" name="Changes" comment="" />
+      <created>1628217034712</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1628217034712</updated>
+      <workItem from="1628217037377" duration="1650000" />
+      <workItem from="1628251953989" duration="9384000" />
+      <workItem from="1628294326569" duration="133000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+</project>
