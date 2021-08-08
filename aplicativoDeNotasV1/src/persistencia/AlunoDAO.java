@@ -7,7 +7,6 @@ import java.sql.*;
 
 public class AlunoDAO {
     private static AlunoDAO instance = null;
-    private PreparedStatement len;
     private PreparedStatement selectNewId;
     private PreparedStatement select;
     private PreparedStatement insert;
@@ -16,7 +15,6 @@ public class AlunoDAO {
 
     private AlunoDAO() throws  ClassNotFoundException, SQLException, SelectException{
         Connection conexao = Conexao.getConexao();
-        len = conexao.prepareStatement("select * from alunos");
         selectNewId = conexao.prepareStatement("select nextval('seq_aluno')");
         insert = conexao.prepareStatement("insert into alunos values (?,?,?)");
         select = conexao.prepareStatement("select * from alunos where cpf = ?");
@@ -27,7 +25,7 @@ public class AlunoDAO {
     public void insert(Aluno obj) throws InsertException, SelectException{
         try{
             insert.setString(1, obj.getCpf());
-            insert.setString(2, obj.getName());
+            insert.setString(2, obj.getNome());
             insert.setString(3, obj.getSenha());
             insert.executeUpdate();
         }catch (SQLException e){
@@ -42,7 +40,7 @@ public class AlunoDAO {
             ResultSet rs = select.executeQuery();
             if(rs.next()){
                 obj.setCpf(rs.getString(1));
-                obj.setName(rs.getString(2));
+                obj.setNome(rs.getString(2));
                 obj.setSenha(rs.getString(3));
                 return obj;
             }
@@ -66,7 +64,7 @@ public class AlunoDAO {
             ResultSet rs = selectNewId.executeQuery();
 
             if(rs.next()) {
-                return rs.getInt(1); //ordem da coluna do que quer retornar, começa em 1
+                return rs.getInt(1);
             }
         }catch(SQLException e) {
             e.printStackTrace();
@@ -74,28 +72,13 @@ public class AlunoDAO {
         return 0;
     }
     private void update(Aluno obj){
-        //update Pessoa set idpessoa = ?, nome = ?, idade = ?, where idpessoa = ?
         try {
             update.setString(2, obj.getCpf());
-            update.setString(2, obj.getName());
+            update.setString(2, obj.getNome());
             update.setString(2, obj.getSenha());
         }catch (SQLException e){
             e.printStackTrace();
         }
-    }
-
-    public int len(){
-        try {
-            ResultSet rs = len.executeQuery();
-            int count = 0;
-            while(rs.next()){
-                count++;
-            }
-            return count;
-        }catch(SQLException e) {
-            e.printStackTrace();
-        }
-        return 0;
     }
 
     public static AlunoDAO getInstance() throws ClassNotFoundException, SQLException, SelectException{

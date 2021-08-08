@@ -20,9 +20,9 @@ public class SemestreDAO {
         Connection conexao = Conexao.getConexao();
         selectNewId = conexao.prepareStatement("select nextval('seq_semestre')");
         insert = conexao.prepareStatement("insert into alunos values (?,?)");
-        select = conexao.prepareStatement("select * from alunos where cpf = ?");
-        update = conexao.prepareStatement("update alunos set cpf = ?, nome = ?, senha = ?");
-        delete = conexao.prepareStatement("delete from alunos where cpf = ?");
+        select = conexao.prepareStatement("select * from alunos where idSemestre = ?");
+        update = conexao.prepareStatement("update alunos set idSemestre = ?, nome = ?");
+        delete = conexao.prepareStatement("delete from alunos where idSemestre = ?");
     }
 
     public void insert(Semestre obj) throws InsertException, SelectException{
@@ -35,10 +35,10 @@ public class SemestreDAO {
         }
     }
 
-    public Semestre select(String id){
+    public Semestre select(int id){
         try{
             Semestre obj = new Semestre();
-            select.setString(1, id);
+            select.setInt(1, id);
             ResultSet rs = select.executeQuery();
             if(rs.next()){
                 obj.setIdSemestre(rs.getInt(1));
@@ -65,7 +65,7 @@ public class SemestreDAO {
             ResultSet rs = selectNewId.executeQuery();
 
             if(rs.next()) {
-                return rs.getInt(1); //ordem da coluna do que quer retornar, começa em 1
+                return rs.getInt(1);
             }
         }catch(SQLException e) {
             e.printStackTrace();
@@ -73,7 +73,6 @@ public class SemestreDAO {
         return 0;
     }
     private void update(Semestre obj){
-        //update Pessoa set idpessoa = ?, nome = ?, idade = ?, where idpessoa = ?
         try {
             update.setInt(2, obj.getIdSemestre());
             update.setString(2, obj.getNome());

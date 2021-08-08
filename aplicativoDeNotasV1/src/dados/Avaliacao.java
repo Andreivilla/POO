@@ -1,5 +1,7 @@
 package dados;
 
+import persistencia.AvaliacaoDAO;
+
 public class Avaliacao {
     private int idAvaliacao;
     private String nome;
@@ -8,6 +10,7 @@ public class Avaliacao {
     private String data;
     private String cpf;
     private String codDciplina;
+
 
     //getters
     public String getCpf() {

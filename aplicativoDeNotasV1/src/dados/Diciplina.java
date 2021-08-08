@@ -4,6 +4,8 @@ public class Diciplina {
     private String codDiciplina;
     private String nome;
 
+
+
     //getters
     public String getNome() {
         return nome;

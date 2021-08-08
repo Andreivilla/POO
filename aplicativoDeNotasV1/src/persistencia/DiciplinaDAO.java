@@ -17,11 +17,11 @@ public class DiciplinaDAO {
 
     private DiciplinaDAO() throws  ClassNotFoundException, SQLException{
         Connection conexao = Conexao.getConexao();
-        selectNewId = conexao.prepareStatement("select nextval('seq_semestre')");
+        selectNewId = conexao.prepareStatement("select nextval('seq_diciplina')");
         insert = conexao.prepareStatement("insert into alunos values (?,?)");
-        select = conexao.prepareStatement("select * from alunos where cpf = ?");
-        update = conexao.prepareStatement("update alunos set cpf = ?, nome = ?, senha = ?");
-        delete = conexao.prepareStatement("delete from alunos where cpf = ?");
+        select = conexao.prepareStatement("select * from alunos where codDiciplina = ?");
+        update = conexao.prepareStatement("update alunos set codDiciplina = ?, nome = ?");
+        delete = conexao.prepareStatement("delete from alunos where codDiciplina = ?");
     }
 
     public void insert(Diciplina obj){
@@ -64,7 +64,7 @@ public class DiciplinaDAO {
             ResultSet rs = selectNewId.executeQuery();
 
             if(rs.next()) {
-                return rs.getInt(1); //ordem da coluna do que quer retornar, começa em 1
+                return rs.getInt(1);
             }
         }catch(SQLException e) {
             e.printStackTrace();
@@ -72,7 +72,6 @@ public class DiciplinaDAO {
         return 0;
     }
     private void update(Diciplina obj){
-        //update Pessoa set idpessoa = ?, nome = ?, idade = ?, where idpessoa = ?
         try {
             update.setString(2, obj.getCodDiciplina());
             update.setString(2, obj.getNome());

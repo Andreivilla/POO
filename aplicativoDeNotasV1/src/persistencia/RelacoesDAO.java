@@ -38,7 +38,7 @@ public class RelacoesDAO {
         }
     }
 
-    public List<Relacao> select(String id){
+    public List<Relacao> selectPorCPF(String id){
         try{
             List<Relacao> lista = new ArrayList<>();
             selectPorCpf.setString(1, id);
@@ -68,12 +68,13 @@ public class RelacoesDAO {
         }
     }
 
+
     private int selectNewId() throws SelectException{
         try {
             ResultSet rs = selectNewId.executeQuery();
 
             if(rs.next()) {
-                return rs.getInt(1); //ordem da coluna do que quer retornar, começa em 1
+                return rs.getInt(1);
             }
         }catch(SQLException e) {
             e.printStackTrace();
@@ -81,7 +82,7 @@ public class RelacoesDAO {
         return 0;
     }
     private void update(Relacao obj){
-        //update Pessoa set idpessoa = ?, nome = ?, idade = ?, where idpessoa = ?
+
         try {
             update.setString(1, obj.getCpf());
             update.setInt(2, obj.getIdSemestre());

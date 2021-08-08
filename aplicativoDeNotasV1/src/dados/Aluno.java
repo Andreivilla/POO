@@ -2,7 +2,7 @@ package dados;
 
 public class Aluno {
     private String cpf;
-    private String name;
+    private String nome;
     private String senha;
 
     //getters
@@ -14,8 +14,8 @@ public class Aluno {
         return senha;
     }
 
-    public String getName() {
-        return name;
+    public String getNome() {
+        return nome;
     }
     //setters
 
@@ -27,15 +27,16 @@ public class Aluno {
         this.senha = senha;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
+
 
     @Override
     public String toString() {
         return "Aluno{" +
                 "cpf='" + cpf + '\'' +
-                ", name='" + name + '\'' +
+                ", name='" + nome + '\'' +
                 ", senha='" + senha + '\'' +
                 '}';
     }
