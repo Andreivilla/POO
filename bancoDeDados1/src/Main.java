@@ -8,6 +8,7 @@ import persistencia.PessoaDAO;
 
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -19,9 +20,14 @@ public class Main {
         p.setNome("Andrei");
         p.setIdade(20);
         inserirPessoa(p);*/
-        /*p = selectPessoa(0);
-        System.out.println(p);*/
-        deletePessoa(0);
+        p = selectPessoa(0);
+        System.out.println(p);
+        //deletePessoa(0);
+        List<Pessoa> ListaPessoas =  selectPessoaIdade(20);
+
+        /*for(Pessoa pessoa : ListaPessoas){
+            System.out.println(pessoa);
+        }*/
 
     }
 
@@ -36,6 +42,20 @@ public class Main {
         }catch (ClassNotFoundException | SelectException | SQLException e){
             e.printStackTrace();
         }
+    }
+
+    private static List<Pessoa> selectPessoaIdade(int idade){
+        try {
+            PessoaDAO pessoaDAO = PessoaDAO.getInstance();
+            try{
+                return pessoaDAO.selectPessoasIdade(idade);
+            }catch (SelectException e){
+                e.printStackTrace();
+            }
+        }catch (ClassNotFoundException | SelectException | SQLException e){
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public static Pessoa novaPessoa(){
@@ -79,7 +99,4 @@ public class Main {
         }
         return null;
     }
-
-
-
 }

@@ -35,7 +35,7 @@ public class SemestreDAO {
         }
     }
 
-    public Semestre select(String id) throws SelectException{
+    public Semestre select(String id){
         try{
             Semestre obj = new Semestre();
             select.setString(1, id);
@@ -51,7 +51,7 @@ public class SemestreDAO {
         return null;
     }
 
-    public void delete(int id) throws DeleteException {
+    public void delete(int id){
         try{
             delete.setInt(1, id);
             delete.executeUpdate();
@@ -60,7 +60,7 @@ public class SemestreDAO {
         }
     }
 
-    private int selectNewId() throws SelectException{
+    private int selectNewId(){
         try {
             ResultSet rs = selectNewId.executeQuery();
 

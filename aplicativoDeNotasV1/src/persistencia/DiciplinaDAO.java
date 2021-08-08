@@ -15,7 +15,7 @@ public class DiciplinaDAO {
     private PreparedStatement delete;
     private PreparedStatement update;
 
-    private DiciplinaDAO() throws  ClassNotFoundException, SQLException, SelectException {
+    private DiciplinaDAO() throws  ClassNotFoundException, SQLException{
         Connection conexao = Conexao.getConexao();
         selectNewId = conexao.prepareStatement("select nextval('seq_semestre')");
         insert = conexao.prepareStatement("insert into alunos values (?,?)");
@@ -24,7 +24,7 @@ public class DiciplinaDAO {
         delete = conexao.prepareStatement("delete from alunos where cpf = ?");
     }
 
-    public void insert(Diciplina obj) throws InsertException, SelectException{
+    public void insert(Diciplina obj){
         try{
             insert.setString(1, obj.getCodDiciplina());
             insert.setString(2, obj.getNome());
@@ -34,7 +34,7 @@ public class DiciplinaDAO {
         }
     }
 
-    public Diciplina select(String id) throws SelectException{
+    public Diciplina select(String id){
         try{
             Diciplina obj = new Diciplina();
             select.setString(1, id);
@@ -50,7 +50,7 @@ public class DiciplinaDAO {
         return null;
     }
 
-    public void delete(String id) throws DeleteException {
+    public void delete(String id){
         try{
             delete.setString(1, id);
             delete.executeUpdate();
@@ -59,7 +59,7 @@ public class DiciplinaDAO {
         }
     }
 
-    private int selectNewId() throws SelectException{
+    private int selectNewId(){
         try {
             ResultSet rs = selectNewId.executeQuery();
 
@@ -81,7 +81,7 @@ public class DiciplinaDAO {
         }
     }
 
-    public static DiciplinaDAO getInstance() throws ClassNotFoundException, SQLException, SelectException{
+    public static DiciplinaDAO getInstance() throws ClassNotFoundException, SQLException{
         if(instance == null){
             instance = new DiciplinaDAO();
         }
