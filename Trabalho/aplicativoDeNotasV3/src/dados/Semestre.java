@@ -4,6 +4,11 @@ public class Semestre {
     private int idSemestre;
     private String nome;
 
+    public Semestre(int id, String nome){
+        this.idSemestre = id;
+        this.nome = nome;
+    }
+    public Semestre(){}
     //getters
 
     public String getNome() {
@@ -21,5 +26,10 @@ public class Semestre {
 
     public void setIdSemestre(int idSemestre) {
         this.idSemestre = idSemestre;
+    }
+
+    @Override
+    public String toString() {
+        return "" + nome;
     }
 }

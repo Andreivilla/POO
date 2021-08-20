@@ -1,0 +1,96 @@
+/*tabela de alunos*/
+create table alunos (cpf varchar(12), nome varchar(50), senha varchar(50), primary key(cpf));
+/*tabela de semestres*/
+create table semestres (idSemestre integer, nome varchar(50), primary key(idSemestre));
+/*tabela de diciplinas*/
+create table diciplinas (codDiciplina varchar(10), nome varchar(100), primary key(codDiciplina));
+/*tabela de relacoes aluno x semestre x diciplinas*/
+create table relacoes (cpf varchar(12), idSemestre integer, codDiciplina varchar (10), 
+					  foreign key(cpf) references alunos,
+					  foreign key(idSemestre) references semestres,
+					  foreign key(codDiciplina) references diciplinas);
+/*tabela de avaliações*/
+create table avaliacoes(idAvaliacao integer, nome varchar(50), nota float, peso float, data date, 
+						cpf varchar(12), codDiciplina varchar(10), primary key(idAvaliacao), 
+						foreign key(cpf) references alunos,
+					   foreign key(codDiciplina) references diciplinas);
+
+
+/*Inserir diciplinas na tabela*/					   
+/*1 fase*/
+insert into diciplinas values('AGT0001', 'ALGORITMOS');
+insert into diciplinas values('GAN0001', 'GEOMETRIA ANALÍTICA');
+insert into diciplinas values('ICD0001', 'INTRODUÇÃO AO CÁLCULO DIFERENCIAL E INTEGRAL');
+insert into diciplinas values('LMA0001', 'LÓGICA MATEMÁTICA');
+insert into diciplinas values('PFN0001', 'PROGRAMAÇÃO FUNCIONAL');
+insert into diciplinas values('TGS0001', 'TEORIA GERAL DE SISTEMAS');
+/*2 fase*/
+insert into diciplinas values('ALI0001', 'ÁLGEBRA LINEAR');
+insert into diciplinas values('CDI1001', 'CÁLCULO DIFERENCIAL E INTEGRAL I');
+insert into diciplinas values('ECC0001', 'ELETRÔNICA PARA CIÊNCIA DA COMPUTAÇÃO');
+insert into diciplinas values('LPG0001', 'LINGUAGEM DE PROGRAMAÇÃO');
+insert into diciplinas values('MDI0002', 'MATEMÁTICA DISCRETA');
+/*3 fase*/
+insert into diciplinas values('AMS0002', 'ANÁLISE E MODELAGEM DE SISTEMAS');
+insert into diciplinas values('EDA1001', 'ESTRUTURA DE DADOS I');
+insert into diciplinas values('EST0008', 'PROBABILIDADE E ESTATÍSTICA');
+insert into diciplinas values('POO0001', 'PROGRAMAÇÃO ORIENTADA A OBJETOS');
+insert into diciplinas values('SID0001', 'SISTEMAS DIGITAIS');
+/*4 fase*/
+insert into diciplinas values('ANN0001', 'ANÁLISE NUMÉRICA');	
+insert into diciplinas values('AOC0004', 'ARQUITETURA E ORG. DE COMPUTADORES');
+insert into diciplinas values('EDA2001', 'ESTRUTURA DE DADOS II');
+insert into diciplinas values('LFA0001', 'LINGUAGENS FORMAIS E AUTÔMATOS');
+insert into diciplinas values('MEP0004', 'METODOLOGIA DA PESQUISA');
+insert into diciplinas values('TEG0002', 'TEORIA DOS GRAFOS');
+/*5 fase*/
+insert into diciplinas values('BAN1002', 'BANCO DE DADOS I');
+insert into diciplinas values('CAL0002', 'COMPLEXIDADE DE ALGORITMOS');
+insert into diciplinas values('CGR0002', 'COMPUTAÇÃO GRÁFICA');
+insert into diciplinas values('COM0002', 'COMPILADORES');
+insert into diciplinas values('SOFT003', 'ENGENHARIA DE SOFTWARE');
+insert into diciplinas values('SOP0003', 'SISTEMAS OPERACIONAIS');
+/*6 fase*/
+insert into diciplinas values('BAN2002', 'BANCO DE DADOS II');
+insert into diciplinas values('IHC0002', 'INTERAÇÃO HOMEM COMPUTADOR');
+insert into diciplinas values('PES0003', 'PESQUISA OPERACIONAL');
+insert into diciplinas values('PIM0002', 'PROCESSAMENTO DE IMAGENS');
+insert into diciplinas values('REC0003', 'REDES DE COMPUTADORES');
+insert into diciplinas values('TEC0002', 'TEORIA DA COMPUTAÇÃO');
+/*7 fase*/	
+insert into diciplinas values('ACT0001', 'AUTOMAÇÃO E CONTROLE');
+insert into diciplinas values('EMI0003', 'EMPREENDEDORISMO EM INFORMÁTICA');
+insert into diciplinas values('IAR0002', 'INTELIGÊNCIA ARTIFICIAL');
+insert into diciplinas values('MFO0001', 'MÉTODOS FORMAIS');
+insert into diciplinas values('SDI0002', 'SISTEMAS DISTRIBUIDOS');
+/*8 fase*/
+insert into diciplinas values('OPI', 'OPTATIVA I');
+insert into diciplinas values('OPII', 'OPTATIVA II');
+insert into diciplinas values('OPIII', 'OPTATIVA III');
+insert into diciplinas values('OPIV', 'OPTATIVA IV');
+insert into diciplinas values('OPV', 'OPTATIVA V');
+insert into diciplinas values('TCC1004', 'TRABALHO DE CONCLUSÃO DE CURSO I');
+/*9 fase*/
+insert into diciplinas values('ATC0011', 'ATIVIDADES COMPLEMENTARES');
+insert into diciplinas values('ETI0003', 'ÉTICA EM INFORMÁTICA');
+insert into diciplinas values('OPVI', 'OPTATIVA VI');
+insert into diciplinas values('OPVII', 'OPTATIVA VII');
+insert into diciplinas values('TCC2005', 'TRABALHO DE CONCLUSÃO DE CURSO II');
+
+/*definindo alguns alunos*/
+insert into alunos(cpf , nome, senha) values('20549495070', 'Gerson Atilano Cancela', '12345');
+insert into alunos(cpf , nome, senha) values('76267066096', 'Oséias Coronel Carromeu', 'senha');
+insert into alunos(cpf , nome, senha) values('09717075026', 'Eliane Negrão Cantanhede', 'senha12334');
+
+/*definindo alguns semestres*/
+insert into semestres(idSemestre, nome) values(0, '2019/01');
+insert into semestres(idSemestre, nome) values(1, '2019/02');
+insert into semestres(idSemestre, nome) values(2, '2020/01');
+insert into semestres(idSemestre, nome) values(3, '2020/02');
+
+/*Criando sequencias*/
+create sequence seq_semestres start 1;
+create sequence seq_avaliacoes start 1;
+create sequence seq_diciplinas start 1;
+create sequence seq_relacoes start 1;
+create sequence seq_alunos start 1;

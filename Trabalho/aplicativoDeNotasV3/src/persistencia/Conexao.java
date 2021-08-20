@@ -13,7 +13,7 @@ public class Conexao {
 
     public static Connection getConexao() throws ClassNotFoundException, SQLException {
         if(conexao==null){
-            String url = "jdbc:postgresql://localhost:5432/aplicativoDeNotas";
+            String url = "jdbc:postgresql://localhost:5432/aplicativoDeNotasV3";
             String usuario = "postgres";
             Class.forName("org.postgresql.Driver");
             conexao = DriverManager.getConnection(url, usuario, senha);

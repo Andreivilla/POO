@@ -13,10 +13,21 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Sistema {
+    private static Sistema instance = null;
+    public static Sistema getInstance(){
+        if(instance == null){
+            instance = new Sistema();
+        }
+        return instance;
+    }
+
+
+    private String cpfLogado = null;
     private Aluno alunoLogado = null;
+    private Professor professorLogado = null;
 
     //login
-    public Boolean login(String cpf, String senha){
+    public Boolean loginAluno(String cpf, String senha){
         try {
             AlunoDAO alunoDAO = AlunoDAO.getInstance();
             Aluno aux = alunoDAO.select(cpf);
@@ -31,8 +42,49 @@ public class Sistema {
         }
         return false;
     }
+    public Boolean loginProfessor(String cpf, String senha){
+        try {
+            ProfessorDAO professorDAO = ProfessorDAO.getInstance();
+            Professor aux = professorDAO.select(cpf);
+            if(aux.getSenha().equals(senha)){
+                professorLogado = aux;
+                return true;
+            }else{
+                return false;
+            }
+        }catch (ClassNotFoundException | SelectException | SQLException e){
+            e.printStackTrace();
+        }
+        return false;
+    }
 
-    public boolean deletarConta(String senha){
+    //select semestres
+    public List<Semestre> selectSemestres(){
+        try {
+            SemestreDAO semestreDAO = SemestreDAO.getInstance();
+            return semestreDAO.selectSemestres();
+        }catch(SQLException | SelectException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    //select semestres alunologado
+    public List<Semestre> semestresAlunoLogado() {
+        try {
+            RelacoesDAO relacoesDAO = RelacoesDAO.getInstance();
+            return relacoesDAO.semestresAluno(cpfLogado);
+        }catch (SQLException | SelectException | ClassNotFoundException e){
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+
+
+
+    /*public boolean deletarConta(String senha){
         if(alunoLogado.getSenha().equals(senha)) {
             try {
                 AlunoDAO alunoDAO = AlunoDAO.getInstance();
@@ -151,18 +203,21 @@ public class Sistema {
     public void gerarPdf(){
         GeradorPdf geradorPdf = new GeradorPdf();
         geradorPdf.gerarTabela(alunoLogado, gerarObjetosPdf());
-    }
+    }*/
 
     //getters
     public Aluno getAlunoLogado() {
         return alunoLogado;
     }
+    public String getCpfLogado() {
+        return cpfLogado;
+    }
 
     //setters
-
     public void setAlunoLogado(Aluno alunoLogado) {
         this.alunoLogado = alunoLogado;
     }
-
-
+    public void setCpfLogado(String cpfLogado) {
+        this.cpfLogado = cpfLogado;
+    }
 }

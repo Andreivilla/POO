@@ -12,6 +12,9 @@ import java.util.List;
 
 public class RelacoesDAO {
     private static RelacoesDAO instance = null;
+
+    private PreparedStatement selectSemestresAluno;
+
     private PreparedStatement selectNewId;
     private PreparedStatement selectPorCpf;
     private PreparedStatement insert;
@@ -20,12 +23,52 @@ public class RelacoesDAO {
 
     private RelacoesDAO() throws  ClassNotFoundException, SQLException, SelectException {
         Connection conexao = Conexao.getConexao();
+        selectSemestresAluno = conexao.prepareStatement("select idsemestre from relacoesalunosemestrediciplina where cpf = ?");
+
+
         selectNewId = conexao.prepareStatement("select nextval('seq_relacoes')");
         insert = conexao.prepareStatement("insert into alunos values (?,?, ?)");
         selectPorCpf = conexao.prepareStatement("select * from alunos where cpf = ?");
         update = conexao.prepareStatement("update alunos set cpf = ?, idsemestre = ?, coddiciplina = ?");
         delete = conexao.prepareStatement("delete from alunos where cpf = ? and idsemestre = ? and coddiciplina = ?");
     }
+
+    public List<Semestre> semestresAluno(String cpf){
+        try{
+            List<Integer> lista = new ArrayList<>();
+            selectSemestresAluno.setString(1, cpf);
+            ResultSet rs = selectSemestresAluno.executeQuery();
+            while(rs.next()){
+                int idSemetre = rs.getInt(1);
+                for(int i : lista){
+                    if(i != idSemetre){
+                        lista.add(i);
+                    }
+                }
+            }
+            List<Semestre> listaSemestres = new ArrayList<>();
+            for(int i : lista){
+                SemestreDAO semestreDAO = SemestreDAO.getInstance();
+                listaSemestres.add(semestreDAO.select(i));
+            }
+        }catch(SQLException | SelectException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     public void insert(Relacao obj) throws InsertException, SelectException{
         try{

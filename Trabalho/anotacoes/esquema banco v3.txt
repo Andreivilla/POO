@@ -1,0 +1,65 @@
+/*tabelas de usuarios*/
+create table alunos (cpf varchar(12), nome varchar(50), senha varchar(50), primary key(cpf));
+create table professores (cpf varchar(12), nome varchar(50), senha varchar(50), primary key(cpf));
+
+/*tabela de semestres*/
+create table semestres (idSemestre integer, nome varchar(50), primary key(idSemestre));
+
+/*tabela de diciplinas*/
+create table diciplinas (codDiciplina varchar(10), nome varchar(100), cpf varchar(12), primary key(codDiciplina), foreign key(cpf) references professores);
+
+/*tabelas de relacoes*/
+/*create table relacoesSemestreDiciplina (foreign key(idSemestre), foreign key(codDiciplina))*/
+create table relacoesAlunoSemestreDiciplina (cpf varchar(12), idSemestre integer, codDiciplina varchar(10), 
+											 foreign key(cpf) references alunos, 
+											 foreign key(idSemestre) references semestres, 
+											 foreign key(codDiciplina) references diciplinas);
+
+/*tabela de avaliações*/
+create table avaliacoes(idAvaliacao integer, idSemestre integer, nome varchar(50), nota float, peso float, data date, 
+						cpf varchar(12), codDiciplina varchar(10), primary key(idAvaliacao), 
+						foreign key(idSemestre) references semestres,
+						foreign key(cpf) references alunos,
+					   	foreign key(codDiciplina) references diciplinas);
+
+/*sequencias*/
+create sequence seq_semestres start 1;
+create sequence seq_avaliacoes start 1;
+create sequence seq_diciplinas start 1;
+create sequence seq_relacoesASD start 1;
+create sequence seq_alunos start 1;
+create sequence seq_professores start 1;
+
+
+/*inserindo valores*/
+/*Professores
+cpf varchar(12), nome varchar(50), senha varchar(50)*/
+insert into professores values ('70078755050', 'Nara Brás Aquino', 'senhaProf1');
+insert into professores values ('99646943004', 'Elsa Imperial Esteves', 'senhaProf2');
+insert into professores values ('09812361030', 'Flávio Bencatel Godinho', 'senhaProf3');
+insert into professores values ('72585872092', 'Júlio Passos Brito', 'senhaProf4');
+
+/*Alunos
+cpf varchar(12), nome varchar(50), senha varchar(50)*/
+insert into alunos values ('36484913005', 'Ludmila Nolasco Figueiredo', 'senhaAluno1');
+insert into alunos values ('36923382017', 'Lira Carqueijeiro Mexia', 'senhaAluno2');
+insert into alunos values ('37099009052', 'Natalia Urias Cortesão', 'senhaAluno3');
+insert into alunos values ('29258734050', 'Raj Cabreira Frota', 'senhaAluno4');
+
+/*semestres
+idSemestre integer, nome varchar(50)*/
+insert into semestres values ('0', '2019/2');
+insert into semestres values ('1', '2020/1');
+insert into semestres values ('2', '2020/2');
+insert into semestres values ('3', '2021/1');
+
+/*diciplinas 
+codDiciplina varchar(10), nome varchar(100), cpf varchar(12)*/
+insert into diciplinas values ('GAN0001', 'GEOMETRIA ANALÍTICA', '70078755050');
+insert into diciplinas values ('ICD0001', 'INTRODUÇÃO AO CÁLCULO DIFERENCIAL E INTEGRAL', '70078755050');
+insert into diciplinas values ('LMA0001', 'LÓGICA MATEMÁTICA', '99646943004');
+insert into diciplinas values ('PFN0001', 'PROGRAMAÇÃO FUNCIONAL', '09812361030');
+insert into diciplinas values ('TGS0001', 'TEORIA GERAL DE SISTEMAS', '72585872092');
+
+
+

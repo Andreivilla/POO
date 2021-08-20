@@ -1,12 +1,15 @@
 package persistencia;
 
 
+import dados.Relacao;
 import dados.Semestre;
 import exception.DeleteException;
 import exception.InsertException;
 import exception.SelectException;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class SemestreDAO {
     private static SemestreDAO instance = null;
@@ -16,13 +19,17 @@ public class SemestreDAO {
     private PreparedStatement delete;
     private PreparedStatement update;
 
+    private PreparedStatement selectSemestres;
+
     private SemestreDAO() throws  ClassNotFoundException, SQLException, SelectException {
         Connection conexao = Conexao.getConexao();
         selectNewId = conexao.prepareStatement("select nextval('seq_semestre')");
         insert = conexao.prepareStatement("insert into alunos values (?,?)");
-        select = conexao.prepareStatement("select * from alunos where idSemestre = ?");
         update = conexao.prepareStatement("update alunos set idSemestre = ?, nome = ?");
         delete = conexao.prepareStatement("delete from alunos where idSemestre = ?");
+
+        select = conexao.prepareStatement("select * from semestres where idSemestre = ?");
+        selectSemestres = conexao.prepareStatement("select * from semestres");
     }
 
     public void insert(Semestre obj) throws InsertException, SelectException{
@@ -33,6 +40,23 @@ public class SemestreDAO {
         }catch (SQLException e){
             e.printStackTrace();
         }
+    }
+
+    public List<Semestre> selectSemestres(){
+        try{
+            List<Semestre> lista = new ArrayList<>();
+            ResultSet rs = selectSemestres.executeQuery();
+            while(rs.next()){
+                Semestre obj = new Semestre();
+                obj.setIdSemestre(rs.getInt(1));
+                obj.setNome(rs.getString(2));
+                lista.add(obj);
+            }
+            return lista;
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public Semestre select(int id){
