@@ -1,11 +1,8 @@
 package apresentacao.aluno;
 
-
 import dados.Semestre;
 import negocio.Sistema;
-
 import javax.swing.*;
-import java.awt.*;
 
 public class PrincipalAluno extends JFrame{
     public PrincipalAluno(Sistema sistema){
@@ -15,6 +12,7 @@ public class PrincipalAluno extends JFrame{
         setResizable(false);
         setVisible(true);
         add(new AbasAluno(sistema));
+
 
 
     }

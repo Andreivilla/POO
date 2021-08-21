@@ -1,13 +1,13 @@
 package dados;
 
 public class Avaliacao {
-    private int idAvaliacao;
     private String nome;
     private float nota;
     private float peso;
     private String data;
     private String cpf;
     private String codDciplina;
+    private int idSemestre;
 
 
     //getters
@@ -30,15 +30,20 @@ public class Avaliacao {
     public String getCodDciplina() {
         return codDciplina;
     }
-    public int getIdAvaliacao() {
-        return idAvaliacao;
-    }
+
 
     public String getData() {
         return data;
     }
 
+    public int getIdSemestre() {
+        return idSemestre;
+    }
     //setters
+
+    public void setIdSemestre(int idSemestre) {
+        this.idSemestre = idSemestre;
+    }
 
     public void setCpf(String cpf) {
         this.cpf = cpf;
@@ -48,9 +53,7 @@ public class Avaliacao {
         this.nome = nome;
     }
 
-    public void setIdAvaliacao(int idAvaliacao) {
-        this.idAvaliacao = idAvaliacao;
-    }
+
 
     public void setData(String data) {
         this.data = data;

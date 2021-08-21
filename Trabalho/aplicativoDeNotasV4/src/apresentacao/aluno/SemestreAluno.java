@@ -2,7 +2,9 @@ package apresentacao.aluno;
 
 
 import dados.Semestre;
+import exception.SelectException;
 import negocio.Sistema;
+import persistencia.RelacoesDAO;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,51 +12,43 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
+import java.sql.SQLException;
 import java.util.List;
 
 public class SemestreAluno extends JPanel {
-    int idSemestre=-1;
+    private int idSemestre=-1;
     public SemestreAluno(Sistema sistema){
         setBackground(Color.gray);
-        TabelaSemestreModel tabelaModel = new TabelaSemestreModel();
-        JTable tabela = new JTable();
+
+        List<Semestre> semestres = lista();
+
+
+        //TabelaSemestreModel tabelaSemestreModel = new TabelaSemestreModel();
+        //tabelaSemestreModel.setSemestres(sistema.listaSemestre());
+
+
+        /*for (Semestre semestre : sistema.listaSemestre()){//tabelaSemestreModel.getSemestres()){
+            System.out.println(semestre);
+        }*/
 
 
 
 
-        JComboBox<Semestre> comboSemestre = new JComboBox(comboSemestre(sistema));
-        comboSemestre.setBounds(50,250,100,30);
-        comboSemestre.addItemListener(new ItemListener() {
-            @Override
-            public void itemStateChanged(ItemEvent e) {
-                if(e.getStateChange() == ItemEvent.SELECTED){
-                    //System.out.println("a: "+ comboSemestre.getSelectedItem());
-                    Semestre aux = (Semestre) comboSemestre.getSelectedItem();
-                    idSemestre = aux.getIdSemestre();
-                }
-            }
-        });
-        add(comboSemestre);
 
+    }
 
-
-        //button deletarSemestre()
-        JButton deletar = new JButton("Deletar");
-        deletar.setBounds(50,300, 100, 30);
-        deletar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                sistema.deletarSemestre(idSemestre);
-            }
-        });
-        add(deletar);
-        //Button cadastrarSemestre()
-
-
-
-        tabelaModel.setSemestres(sistema.listaSemestre());
-        tabela.setModel(tabelaModel);
-        add(tabela);
+    public List<Semestre> lista(){
+        try {
+            RelacoesDAO relacoesDAO = RelacoesDAO.getInstance();
+            return relacoesDAO.selectSemestres("36484913005");
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (SelectException e) {
+            e.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 
     public Semestre[] comboSemestre(Sistema sistema){

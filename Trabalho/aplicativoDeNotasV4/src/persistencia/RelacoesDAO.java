@@ -17,6 +17,7 @@ public class RelacoesDAO {
     private PreparedStatement cadastrarSemestre;
     private PreparedStatement deletarSemestre;
     private PreparedStatement update;
+    private PreparedStatement selectDiciplinas;
 
     private RelacoesDAO() throws  ClassNotFoundException, SQLException, SelectException {
         Connection conexao = Conexao.getConexao();
@@ -24,8 +25,30 @@ public class RelacoesDAO {
         cadastrarSemestre = conexao.prepareStatement("insert into relacoesalunosemestrediciplina values (?,?)");
         deletarSemestre = conexao.prepareStatement("delete from relacoesalunosemestrediciplina where cpf = ? and idsemestre = ?");
         selectSemestres = conexao.prepareStatement("select idsemestre from relacoesalunosemestrediciplina where cpf = ?");
+        selectDiciplinas = conexao.prepareStatement("select coddiciplina from relacoesalunosemestrediciplina where cpf = ? and idsemestre = ?");
         selectNewId = conexao.prepareStatement("select nextval('seq_relacoes')");
     }
+
+    public List<Diciplina> selectDiciplinas(String cpf, int id){
+        try{
+            List<Diciplina> listaAux = new ArrayList<>();
+            selectDiciplinas.setString(1,cpf);
+            selectDiciplinas.setInt(2, id);
+            ResultSet rs = selectDiciplinas.executeQuery();
+            while (rs.next()) {
+                DiciplinaDAO diciplinaDAO = DiciplinaDAO.getInstance();
+                Diciplina aux = diciplinaDAO.select(rs.getString(1));
+                listaAux.add(aux);
+            }
+            return listaAux;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
+
 
     public void deletarSemestre(String cpf, int id){
         try{

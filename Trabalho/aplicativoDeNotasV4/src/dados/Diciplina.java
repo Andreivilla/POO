@@ -3,7 +3,7 @@ package dados;
 public class Diciplina {
     private String codDiciplina;
     private String nome;
-
+    private String cpfProfessor;
 
 
     //getters
@@ -15,6 +15,10 @@ public class Diciplina {
         return codDiciplina;
     }
 
+    public String getCpfProfessor() {
+        return cpfProfessor;
+    }
+
     //setter
     public void setNome(String nome) {
         this.nome = nome;
@@ -22,5 +26,9 @@ public class Diciplina {
 
     public void setCodDiciplina(String codDiciplina) {
         this.codDiciplina = codDiciplina;
+    }
+
+    public void setCpfProfessor(String cpfProfessor) {
+        this.cpfProfessor = cpfProfessor;
     }
 }
