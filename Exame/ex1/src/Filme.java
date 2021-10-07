@@ -3,6 +3,16 @@ public class Filme implements ITaxavel{
     private int duracao;
     private double preco;
 
+    public Filme(){
+
+    }
+    public Filme(String nome, int duracao, double preco){
+        this.nome = nome;
+        this.duracao = duracao;
+        this.preco = preco;
+
+    }
+
     @Override
     public double calcularImposto() {
         return 0.015*duracao;
@@ -34,9 +44,12 @@ public class Filme implements ITaxavel{
 
     @Override
     public String toString() {
+        double precocomImposto = preco + calcularImposto();
         return "Tipo: filme \n" +
-                "Nome: '" + nome +
-                "\nDracao :" + duracao +
-                "\nPreco: " + preco + calcularImposto();
+                "Nome: " + nome +
+                "\nDracao: " + duracao +
+                "\nPreco sem imposto: " + preco +
+                "\nImposto: " + calcularImposto() +
+                "\nPreco com imposto: " + precocomImposto;
     }
 }

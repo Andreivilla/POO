@@ -3,6 +3,16 @@ public class Veiculo implements ITaxavel{
     private int ano;
     private double preco;
 
+    public Veiculo(){
+
+    }
+    public Veiculo(String placa, int ano, double preco){
+        this.placa = placa;
+        this.ano = ano;
+        this.preco = preco;
+    }
+
+
     @Override
     public double calcularImposto() {
         if(ano < 2000)
@@ -37,9 +47,12 @@ public class Veiculo implements ITaxavel{
 
     @Override
     public String toString() {
+        double precocomImposto = preco + calcularImposto();
         return "Tipo veiculo:\n" +
-                "Placa='" + placa +
-                "\nAno=" + ano +
-                "\nPreco=" + preco + calcularImposto();
+                "Placa: " + placa +
+                "\nAno: " + ano +
+                "\nPreco sem imposto: " + preco +
+                "\nImposto: " + calcularImposto() +
+                "\nPreco com imposto: " + precocomImposto;
     }
 }
